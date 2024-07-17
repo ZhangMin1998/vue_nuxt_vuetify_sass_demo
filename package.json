@@ -13,11 +13,12 @@
     "@mdi/font": "^7.4.47",
     "nuxt": "^3.12.3",
     "sass": "^1.77.8",
-    "vue": "latest"
+    "vant": "^4.9.2",
+    "vue": "latest",
+    "vue-i18n": "^9.13.1"
   },
   "devDependencies": {
     "@vant/nuxt": "^1.0.5",
-    "node-sass": "^9.0.0",
     "sass-loader": "^14.2.1",
     "vite-plugin-vuetify": "^2.0.3",
     "vuetify": "^3.6.12"
