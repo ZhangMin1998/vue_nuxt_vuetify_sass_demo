@@ -11,7 +11,7 @@
 
     <div class="my-component">
       <h1>Hello SCSS!</h1>
-      <p>{{ $t('a.') }}</p>
+      <p>{{ $t('a.title') }}</p>
     </div>
   </div>
 </template>
@@ -25,6 +25,8 @@ import { globalStore } from '@/store/global'
 
 const { locale } = useI18n({})
 const globalInfo = globalStore()
+// const language = ref('')
+// provide('language', language)
 
 onMounted(() => {
   console.log(1000000);
@@ -32,23 +34,15 @@ onMounted(() => {
     getParameterByName('language') ||
     getParameterByName('lan') ||
     getParameterByName('lang') ||
-    'zh-hans'
-  // locale.value = lang
+    'zh-hant'
+  locale.value = lang
   console.log(111111, lang);
   globalInfo.setGlobalInfo({
     language: lang,
     // skin: theme.value,
     upsDownsColor: getParameterByName('upsDownsColor') || '2'
-    // language: 'en'
   })
   // language.value = lang
-  // switch (lang) {
-  //   case 'zh-CN':
-  //     Locale.use('zh-CN', zhTW)
-  //     break
-  //   case 'en':
-  //     Locale.use('en-US', enUS)
-  // }
 })
 </script>
 

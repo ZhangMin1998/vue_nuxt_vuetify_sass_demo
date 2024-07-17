@@ -10,7 +10,7 @@ import en from '@/lang/en'
 const messages = {
   'zh-hant': zhHant,
   'zh-hans': zhHans,
-  'en': en
+  en: en
 }
 
 // 默认语言
