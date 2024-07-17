@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   },
   ssr: false,
   modules: [
+    '@pinia/nuxt',
     '@vant/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {

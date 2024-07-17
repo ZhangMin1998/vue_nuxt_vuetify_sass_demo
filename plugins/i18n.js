@@ -1,20 +1,20 @@
 import { defineNuxtPlugin } from '#app'
 import { createI18n } from 'vue-i18n'
 
-import zhHK from '@/lang/zh-HK'
-import zhCN from '@/lang/zh-CN'
-import enUS from '@/lang/en-US'
+import zhHant from '@/lang/zh-hant'
+import zhHans from '@/lang/zh-hans'
+import en from '@/lang/en'
 // 国际化
 
 // 语言库
 const messages = {
-  'zh-HK': zhHK,
-  'zh-CN': zhCN,
-  'en-US': enUS
+  'zh-hant': zhHant,
+  'zh-hans': zhHans,
+  'en': en
 }
 
 // 默认语言
-const langDefault = 'zh-HK'
+const langDefault = 'zh-hant'
 
 export const i18n = createI18n({
   legacy: false,

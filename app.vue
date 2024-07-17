@@ -11,7 +11,7 @@
 
     <div class="my-component">
       <h1>Hello SCSS!</h1>
-      <p>{{ t('a.title') }}</p>
+      <p>{{ $t('a.') }}</p>
     </div>
   </div>
 </template>
@@ -20,9 +20,11 @@
 import '@/sass/variable.scss'
 import { useI18n } from 'vue-i18n'
 import { getParameterByName } from '@/utils'
-import { Locale } from 'vant'
+// import { Locale } from 'vant'
+import { globalStore } from '@/store/global'
 
-const { t, locale } = useI18n({})
+const { locale } = useI18n({})
+const globalInfo = globalStore()
 
 onMounted(() => {
   console.log(1000000);
@@ -30,19 +32,19 @@ onMounted(() => {
     getParameterByName('language') ||
     getParameterByName('lan') ||
     getParameterByName('lang') ||
-    'zh-HK'
+    'zh-hans'
   // locale.value = lang
   console.log(111111, lang);
-  // globalInfo.setGlobalInfo({
-  //   language: lang,
-  //   skin: theme.value,
-  //   upsDownsColor: getParameterByName('upsDownsColor') || '2'
-  //   // language: 'en'
-  // })
+  globalInfo.setGlobalInfo({
+    language: lang,
+    // skin: theme.value,
+    upsDownsColor: getParameterByName('upsDownsColor') || '2'
+    // language: 'en'
+  })
   // language.value = lang
   // switch (lang) {
-  //   case 'zh-HK':
-  //     Locale.use('zh-TW', zhTW)
+  //   case 'zh-CN':
+  //     Locale.use('zh-CN', zhTW)
   //     break
   //   case 'en':
   //     Locale.use('en-US', enUS)
